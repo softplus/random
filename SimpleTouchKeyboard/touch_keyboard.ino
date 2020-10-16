@@ -1,3 +1,9 @@
+//
+// SimpleTouchKeyboard
+//   Uses touch-pin (any wire, etc) to trigger a keypress as a USB keyboard
+//   Requires USB HID keyboard capable Arduino device
+//   https://github.com/softplus/random/tree/master/SimpleTouchKeyboard
+//
 
 // Hardware: Sparkfun Pro Micro (5v or 3.3v), or cheap clone ( https://www.aliexpress.com/wholesale?SearchText=%22pro+micro%22 )
 // Pin A3 connected to paperclip & whatever metal thing you want to use to trigger
