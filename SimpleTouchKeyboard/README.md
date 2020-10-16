@@ -5,4 +5,4 @@ Probably works on all of the similar devices.
 
 Triggers Ctrl-1 as a USB keyboard. Your app can catch Ctrl-1 as whatever (I use it as a global mute/unmute for Hangouts)
 
-![SpoonKey](SimpleTouchSpoon.jpg?raw=true "SpoonKey")
+![SpoonKey](SimpleTouchSpoon.png?raw=true "SpoonKey")
