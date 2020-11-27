@@ -35,7 +35,7 @@ It's flakey. At least make sure you can use it. I used https://github.com/nickga
 
 Output:
 
-`
+```
 22:48:23.561 -> 
 22:48:23.561 -> Atmega chip detector.
 22:48:23.561 -> Written by Nick Gammon.
@@ -73,7 +73,7 @@ Output:
 22:48:23.826 -> F0: 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 
 22:48:23.826 -> 
 22:48:23.826 -> Programming mode off.
-`
+```
 
 Note it recognizes the attiny85 MCU.
 
