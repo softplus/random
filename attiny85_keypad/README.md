@@ -184,7 +184,7 @@ Not really sure what this does, whatever.
 
 avrdude -v -v -P /dev/ttyACM0 -b 19200 -c stk500v1 -p attiny85 -U lfuse:w:0xe2:m -U hfuse:w:0xdd:m -U efuse:w:0xfe:m
 
-or ...  change the value of the `CKSEL` bit
+or ...  change the value of the CKSEL bit
 
 avrdude -v -v -P /dev/ttyACM0 -b 19200 -c stk500v1 -p attiny85 -U lfuse:w:0xe1:m -U hfuse:w:0xdd:m -U efuse:w:0xfe:m
 
@@ -216,3 +216,13 @@ avrdude done.  Thank you.
 
 7. Give up and take a break. Then come back and try it again. Good luck. 
 
+
+## Sources:
+- https://gist.github.com/amcolash/b930cb9d206b75ca5fd4ab974cb78a60
+- https://learn.sparkfun.com/tutorials/how-to-install-an-attiny-bootloader-with-virtual-usb/install-micronucleus
+- http://digistump.com/wiki/digispark/tutorials/connecting#software
+- https://digistump.com/wiki/digispark/tutorials/programming
+- https://www.gammon.com.au/bootloader
+- https://github.com/nickgammon/arduino_sketches
+- https://gist.github.com/Ircama/22707e938e9c8f169d9fe187797a2a2c
+- https://www.instructables.com/How-to-Program-an-ATtiny-85-Digispark/
