@@ -6,5 +6,4 @@ Kinda flakey USB connection, probably because the attiny85 doesn't have a real c
 
 Arduino sketch is super-basic.
 
-Board is designed for mechanical keyswitches (MX Cherry). 
-
+Board is designed for mechanical keyswitches (MX Cherry). PCB is round, 26mm in diameter (fits in a beer bottle-cap). Getting the PCB made with components comes to about $3/board (when ordering 5 at JLCPCB; you add the micro-USB port though). 
