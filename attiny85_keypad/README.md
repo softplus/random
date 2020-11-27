@@ -16,6 +16,8 @@ a. The micronucleus firmware (https://github.com/micronucleus/micronucleus)
 
 git clone https://github.com/micronucleus/micronucleus.git
 
+You can use the pre-compiled releases directly, no need to install or make anything for Micronucleus. You could also just download the t85_aggressive.hex file directly. 
+
 b. avrdude
 
 sudo apt-get update
