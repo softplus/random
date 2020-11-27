@@ -284,6 +284,19 @@ running: 100% complete
   This step sometimes flakes out. Retry it as needed.
   
   c. Watch it blink. You did it!
+  
+  d. Check `dmesg` to check that the computer sees it
+
+`dmesg | tail -n 10`
+
+```
+...
+[ 4846.118208] usb 1-8: new low-speed USB device number 108 using xhci_hcd
+[ 4846.269209] usb 1-8: New USB device found, idVendor=16d0, idProduct=0753, bcdDevice= 2.04
+[ 4846.269214] usb 1-8: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+```
+
+It won't show up completely clean yet, since we're not connecting to the USB as a HID / keyboard yet. It should trigger a connection there though.
 
 6. Install the key switch
 
