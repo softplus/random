@@ -10,6 +10,12 @@ Board is designed for mechanical keyswitches (MX Cherry). PCB is round, 26mm in 
 
 ## Programming
 
+0. Solder on the micro-USB connector.
+
+Use a magnifying glass or a microscope. These traces are tiny :P. 
+
+Don't solder on the key switch yet, since it blocks the ISP port.
+
 1. Download & install things
 
   a. The micronucleus firmware (https://github.com/micronucleus/micronucleus)
@@ -217,17 +223,79 @@ avrdude: safemode: Fuses OK (E:FE, H:DD, L:E2)
 avrdude done.  Thank you.
 ```
 
-4. Connect PCB to USB directly
+4. Set up Arduino to access the board directly
 
-5. Install Arduino sketch
+* Add additional board: http://digistump.com/package_digistump_index.json
+* Install "Digistump AVR Boards"
+* Select board "Digispark Default" and programmer "Micronucleus"
+* No port needed.
 
-- Add additional board: http://digistump.com/package_digistump_index.json
-- Install "Digistump AVR Boards"
-- Select board "Digispark Default" and programmer "Micronucleus"
+5. Install Arduino blink sketch, tweak to work on our board
 
-6. Retry any step that flakes (it often does)
+  a. add this to the top of the sketch:
+  
+```
+#define LED_BUILTIN 1
+```
 
-7. Give up and take a break. Then come back and try it again. Good luck. 
+  b. Compile and upload
+  
+  It'll tell you to connect the board -- you need to wait before connecting. 
+  Tip: connect the micro-USB first, make sure it sits well, then connect the cable to the computer where you're programming from.
+
+  ```
+  Sketch uses 700 bytes (11%) of program storage space. Maximum is 6012 bytes.
+Global variables use 9 bytes of dynamic memory.
+/home/x/.arduino15/packages/digistump/tools/micronucleus/2.0a4/launcher -cdigispark --timeout 60 -Uflash:w:/tmp/arduino_build_279167/test_tiny_blink_01.ino.hex:i 
+Running Digispark Uploader...
+Plug in device now... (will timeout in 60 seconds)
+> Please plug in the device ... 
+> Press CTRL+C to terminate the program.
+```
+
+(now connect the cable)
+
+```
+> Device is found!
+connecting: 16% complete
+connecting: 22% complete
+connecting: 28% complete
+connecting: 33% complete
+> Device has firmware version 2.4
+> Device signature: 0x1e930b 
+> Available space for user applications: 6714 bytes
+> Suggested sleep time between sending pages: 7ms
+> Whole page count: 105  page size: 64
+> Erase function sleep duration: 735ms
+parsing: 50% complete
+> Erasing the memory ...
+erasing: 55% complete
+erasing: 60% complete
+erasing: 65% complete
+> Starting to upload ...
+writing: 70% complete
+writing: 75% complete
+writing: 80% complete
+> Starting the user app ...
+running: 100% complete
+>> Micronucleus done. Thank you!
+```
+
+  This step sometimes flakes out. Retry it as needed.
+  
+  c. Watch it blink. You did it!
+
+6. Install the key switch
+
+Since you don't need the ISP port anymore, you can install the key switch. 
+
+6. Install the real Arduino sketch 
+
+Use the same method. Disconnect. Compile + upload. Connect when prompted.
+
+7. Retry any step that flakes (it often does)
+
+8. Give up and take a break. Then come back and try it again. Good luck. 
 
 
 ## Sources:
