@@ -14,14 +14,15 @@ Board is designed for mechanical keyswitches (MX Cherry). PCB is round, 26mm in 
 
   a. The micronucleus firmware (https://github.com/micronucleus/micronucleus)
 
-git clone https://github.com/micronucleus/micronucleus.git
+`git clone https://github.com/micronucleus/micronucleus.git`
 
 You can use the pre-compiled releases directly, no need to install or make anything for Micronucleus. You could also just download the t85_aggressive.hex file directly. 
 
   b. avrdude
 
-sudo apt-get update
-sudo apt-get install avrdude
+`sudo apt-get update`
+
+`sudo apt-get install avrdude`
 
 2. Set up your ISP programmer
 
@@ -86,7 +87,7 @@ See https://www.arduino.cc/en/Tutorial/BuiltInExamples/ArduinoISP for more infor
 
 a. Burn bootloader
 
-avrdude -v -v -P /dev/ttyACM0 -b 19200 -c stk500v1 -p attiny85 -Uflash:w:micronucleus/firmware/releases/t85_aggressive.hex:i
+`avrdude -v -v -P /dev/ttyACM0 -b 19200 -c stk500v1 -p attiny85 -Uflash:w:micronucleus/firmware/releases/t85_aggressive.hex:i`
 
 (Weirdly, the ArduinoISP sketch needs to be set as stk500v1 in avrdude. Shrug.)
 
@@ -180,23 +181,35 @@ avrdude done.  Thank you.
 
 b. Burn some fuses
 
-Not really sure what this does, whatever.
+This sets the fuses so that things work. 
 
-avrdude -v -v -P /dev/ttyACM0 -b 19200 -c stk500v1 -p attiny85 -U lfuse:w:0xe2:m -U hfuse:w:0xdd:m -U efuse:w:0xfe:m
+`avrdude -v -v -P /dev/ttyACM0 -b 19200 -c stk500v1 -p attiny85 -U lfuse:w:0xe1:m -U hfuse:w:0xdd:m -U efuse:w:0xfe:m`
 
-or ...  change the value of the CKSEL bit
+or ...  change the value of the CKSEL bit (
 
-avrdude -v -v -P /dev/ttyACM0 -b 19200 -c stk500v1 -p attiny85 -U lfuse:w:0xe1:m -U hfuse:w:0xdd:m -U efuse:w:0xfe:m
+`avrdude -v -v -P /dev/ttyACM0 -b 19200 -c stk500v1 -p attiny85 -U lfuse:w:0xe2:m -U hfuse:w:0xdd:m -U efuse:w:0xfe:m`
+
+Fuse settings:
+
+Picking fuse settings: http://eleccelerator.com/fusecalc/fusecalc.php?chip=attiny85
+
+L:E1 = PLL Clock; Start-up time PWRDWN/RESET: 1K CK/14 CK + 64 ms; [CKSEL=0001 SUT=10]
+
+L:E2 = Int. RC Osc. 8 MHz; Start-up time PWRDWN/RESET: 6 CK/14 CK + 64 ms; [CKSEL=0010 SUT=10]; default value
+
+H:DD = Brown-out detection level at VCC=2.7 V; [BODLEVEL=101] + Serial program downloading (SPI) enabled; [SPIEN=0]
+
+E:FF = nothing
 
 c. Verify fuses
 
-(should read E:FE, H:DD, L:E2)
+(should read E:FE, H:DD, L:E1)
 
-avrdude -v -v -P /dev/ttyACM0 -b 19200 -c stk500v1 -p attiny85 -U lfuse:r:-:i
+`avrdude -v -v -P /dev/ttyACM0 -b 19200 -c stk500v1 -p attiny85 -U lfuse:r:-:i`
 
 ```
 ...stuff...
-avrdude: safemode: lfuse reads as E2
+avrdude: safemode: lfuse reads as E1
 avrdude: safemode: hfuse reads as DD
 avrdude: safemode: efuse reads as FE
 avrdude: safemode: Fuses OK (E:FE, H:DD, L:E2)
