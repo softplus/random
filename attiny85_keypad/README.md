@@ -12,24 +12,24 @@ Board is designed for mechanical keyswitches (MX Cherry). PCB is round, 26mm in 
 
 1. Download & install things
 
-1.a. The micronucleus firmware (https://github.com/micronucleus/micronucleus)
+  a. The micronucleus firmware (https://github.com/micronucleus/micronucleus)
 
 git clone https://github.com/micronucleus/micronucleus.git
 
 You can use the pre-compiled releases directly, no need to install or make anything for Micronucleus. You could also just download the t85_aggressive.hex file directly. 
 
-1.b. avrdude
+  b. avrdude
 
 sudo apt-get update
 sudo apt-get install avrdude
 
 2. Set up your ISP programmer
 
-2.a. Connect PCB to ISP connector on Arduino (or whatever you use to program)
+  a. Connect PCB to ISP connector on Arduino (or whatever you use to program)
 
 I used a pogo-pin connector, you could try something similar or just hold the board to a bunch of pins. It's flakey without a good connection, but you only need to burn the bootloader once. For the Arduino ISP sketch you can either connect the ICSP header pins (without pin 5 - reset) to the PCB or use pins 10-13 + 5v + GND separately. 
 
-2.b. Test the ICSP connection (optional)
+  b. Test the ICSP connection (optional)
 
 It's flakey. At least make sure you can use it. I used https://github.com/nickgammon/arduino_sketches/tree/master/Atmega_Board_Detector to check.
 
@@ -77,7 +77,7 @@ Output:
 
 Note it recognizes the attiny85 MCU.
 
-2.c. Install the ArduinoISP sketch on the Arduino
+  c. Install the ArduinoISP sketch on the Arduino
 
 See https://www.arduino.cc/en/Tutorial/BuiltInExamples/ArduinoISP for more information. See https://www.gammon.com.au/bootloader for more detailed information. 
 
