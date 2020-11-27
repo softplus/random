@@ -208,6 +208,10 @@ avrdude done.  Thank you.
 
 5. Install Arduino sketch
 
+- Add additional board: http://digistump.com/package_digistump_index.json
+- Install "Digistump AVR Boards"
+- Select board "Digispark Default" and programmer "Micronucleus"
+
 6. Retry any step that flakes (it often does)
 
 7. Give up and take a break. Then come back and try it again. Good luck. 
