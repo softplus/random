@@ -185,7 +185,7 @@ This sets the fuses so that things work.
 
 `avrdude -v -v -P /dev/ttyACM0 -b 19200 -c stk500v1 -p attiny85 -U lfuse:w:0xe1:m -U hfuse:w:0xdd:m -U efuse:w:0xfe:m`
 
-or ...  change the value of the CKSEL bit (
+or ...  change the value of the CKSEL bit (L-Fuse to E2 instead of E1; uses internal RC osc at 8MHz instead of PLL clock; dunno why)
 
 `avrdude -v -v -P /dev/ttyACM0 -b 19200 -c stk500v1 -p attiny85 -U lfuse:w:0xe2:m -U hfuse:w:0xdd:m -U efuse:w:0xfe:m`
 
