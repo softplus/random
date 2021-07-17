@@ -50,4 +50,6 @@ Photo of running device
 * Moz is probably a trademark. Maybe MozCast is too? I didn't see anything off-hand.
 * Does not download or store any cookies from the MozCast servers. Your requests may be logged with your public IP address though.
 * I don't think ESP_WiFiManager stores any cookies or keeps any analytics either, but it's not under my control.
-
+* The code is a messy mix of String() and char\[]s - it works for me.
+* If Moz changes their setup, this will stop working. I have no particular plans to keep it working, but I might. 
+* I don't have plans to implement other search-weather reports. Knock yourself out if you want to do it. The HTML parsing is messy, a JSON API would be easier. 
