@@ -1,5 +1,7 @@
 # Displays Mozcast weather on a ESP32 board
 
+Arduino C++ code. Apache 2 license.
+
 ## Requirements
 
  *  ESP32 Lilypad TTGO with T-Display (can be adapted to others easily though)
@@ -24,8 +26,17 @@
 
 4. Compile & upload
 
-Arduino C++ code. 
+## Usage
 
-Photo of running device:
+The device uses a [wifi-manager](https://github.com/khoih-prog/ESP_WiFiManager). 
+On first run, it will create a local access point, where you can configure your wifi credentials. 
+These credentials are stored in flash memory and reused on future connections.
+
+If you want to change the credentials or use a different network, use the reset button twice within 10 seconds.
+This will re-activate the local access point and let you make changes. 
+
+## Misc
+
+Photo of running device
 
 ![](photo-ttgo.png)
