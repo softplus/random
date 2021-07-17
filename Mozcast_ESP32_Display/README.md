@@ -7,9 +7,9 @@
     (currently $10-25; chips are a bit more expensive than they used to be)
     
  *  Libraries (all in Arduino too):
- *  * TFT_eSPI - https://github.com/Bodmer/TFT_eSPI
- *  * ESP_DoubleResetDetector - https://github.com/khoih-prog/ESP_DoubleResetDetector
- *  * ESP_WiFiManager - https://github.com/khoih-prog/ESP_WiFiManager
+    * TFT_eSPI - https://github.com/Bodmer/TFT_eSPI
+    * ESP_DoubleResetDetector - https://github.com/khoih-prog/ESP_DoubleResetDetector
+    * ESP_WiFiManager - https://github.com/khoih-prog/ESP_WiFiManager
 
  
 ## Configuration
