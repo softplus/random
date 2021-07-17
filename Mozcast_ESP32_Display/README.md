@@ -1,6 +1,8 @@
-# Displays Mozcast weather on a ESP32 board
+# Displays MozCast weather on a ESP32 board
 
-Arduino C++ code. Apache 2 license.
+Arduino C++ code. Apache 2 license. Uses [MozCast](https://moz.com/mozcast) data. 
+This is Moz's unique interpretation of how Google's search results change. YMMV. 
+This is just for fun. 
 
 ## Requirements
 
@@ -40,3 +42,12 @@ This will re-activate the local access point and let you make changes.
 Photo of running device
 
 ![](photo-ttgo.png)
+
+### Sidenotes
+
+* The time on the bottom is from the HTTP response headers and may vary depending on the server you get.
+* The descriptive weather is just the filename of the icon used on the page.  
+* Moz is probably a trademark. Maybe MozCast is too? I didn't see anything off-hand.
+* Does not download or store any cookies from the MozCast servers. Your requests may be logged with your public IP address though.
+* I don't think ESP_WiFiManager stores any cookies or keeps any analytics either, but it's not under my control.
+
