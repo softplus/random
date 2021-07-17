@@ -25,3 +25,6 @@
 
 Arduino C++ code. 
 
+Photo of running device:
+
+![](photo-ttgo.png)
