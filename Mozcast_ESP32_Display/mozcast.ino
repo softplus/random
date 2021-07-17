@@ -15,6 +15,7 @@
  *    TFT_eSPI - https://github.com/Bodmer/TFT_eSPI
  *    ESP_DoubleResetDetector - https://github.com/khoih-prog/ESP_DoubleResetDetector
  *    ESP_WiFiManager - https://github.com/khoih-prog/ESP_WiFiManager
+ *    (these also use some default libraries: WiFi, HTTPClient, SPI, FS, SPIFFS, DNSServer, EEPROM)
  *
  *  Configuration:
  *    1. Edit TFT_eSPI User_Setup_Select.h:
@@ -40,11 +41,11 @@ unsigned long timerDelay = 600000L;   // Refresh every 10 minutes
 #include <ESP_WiFiManager.h>          // https://github.com/khoih-prog/ESP_WiFiManager
 #define USE_SPIFFS            true
 #define ESP_DRD_USE_EEPROM    true
-#define DRD_TIMEOUT             10
-#define DRD_ADDRESS             0
+#define DRD_TIMEOUT           10
+#define DRD_ADDRESS           0
 #include <ESP_DoubleResetDetector.h>  // https://github.com/khoih-prog/ESP_DoubleResetDetector
 DoubleResetDetector* drd;
-bool      initialConfig = false;
+bool wifi_initialConfig = false;
 
 void setup() {
   Serial.begin(115200); // Set up serial port to 115200 Baud for debugging (not needed)
@@ -59,10 +60,13 @@ void setup() {
    * Using reset twice within 10 seconds will return to this setup should you want to change the wifi setup.
    */
   drd = new DoubleResetDetector(DRD_TIMEOUT, DRD_ADDRESS);
-  if (drd->detectDoubleReset()) { Serial.println(F("DRD")); initialConfig = true; }
+  if (drd->detectDoubleReset()) { Serial.println(F("DRD")); wifi_initialConfig = true; }
   ESP_WiFiManager ESP_wifiManager("ConfigOnDoubleReset");
-  if (ESP_wifiManager.WiFi_SSID() == "") { Serial.println(F("No AP credentials")); initialConfig = true; }
-  if (initialConfig) {
+  if (ESP_wifiManager.WiFi_SSID() == "") { 
+    Serial.println(F("No AP credentials")); 
+    wifi_initialConfig = true; 
+  }
+  if (wifi_initialConfig) {
     String AP_SSID = "ESP_AP_CONFIG";
     tft.fillScreen(TFT_BLACK); tft.setCursor(1,10); tft.setTextFont(4);
     tft.print("Set up with wifi access point: \n" + AP_SSID);
@@ -79,16 +83,20 @@ void setup() {
     Serial.println(F("Failed to connect"));     
     tft.fillScreen(TFT_RED); tft.setCursor(1,10); tft.setTextFont(4);
     tft.print("WIFI failed.\nRebooting ...");
-    uint32_t countdown = millis() + DRD_TIMEOUT*1000 + 2000; 
-    while (millis() < countdown) { delay(10); }
+    delay( DRD_TIMEOUT*1000 + 2000 );
     Serial.println("Rebooting.");
     ESP.restart();
-  } else { Serial.print(F("Local IP: ")); Serial.println(WiFi.localIP()); }
+  } else { 
+    Serial.print(F("Local IP: ")); Serial.println(WiFi.localIP()); 
+  }
 
   // wifi is now connected, get on with life.
   
-  tft.fillScreen(TFT_BLACK); tft.drawString("Loading ...", 10, 10, 4);
-  nextTime = millis() + 500; // get the first update in 0.5 seconds
+  tft.fillScreen(TFT_BLACK); 
+  tft.drawString("Loading ...", 10, 10, 4);
+  nextTime = millis() + 500; // get the first update right away 
+
+  // the device now executes loop() below repeatedly
 }
 
 /* Extract a value from a JSON string -- super-basic, error-prone
@@ -209,7 +217,8 @@ void display_weather() {
   String data_temp_now = simple_json_value(scraped_weather, "temp", false);
   Serial.print("temp="); Serial.println(data_temp_now);
   
-  String data_temp_was = simple_json_value(scraped_weather.substring(scraped_weather.indexOf("\"temp\"")+1), "temp", false);
+  String data_temp_was = simple_json_value(
+    scraped_weather.substring(scraped_weather.indexOf("\"temp\"")+1), "temp", false);
   Serial.print("previous temp="); Serial.println(data_temp_was);
   
   String data_icon= simple_json_value(scraped_weather, "icon", true);
@@ -222,7 +231,7 @@ void display_weather() {
   int int_temp_was = data_temp_was.toInt();
   int temp_diff = int_temp_now - int_temp_was;
 
-  // update TFT
+  // update TFT display
   int i, ix, iy;
   int ix_margin = 5;
   tft.fillScreen(TFT_BLACK);
@@ -242,9 +251,14 @@ void display_weather() {
 
   tft.setTextColor(0x7BEF); // dark grey
   tft.drawString(server_date, ix_margin, 118, 2);
-
 }
 
+/* Main loop() -- this is executed repeatedly
+ *  - makes the wifi-manager happy
+ *  - checks if it's time to poll the server
+ *  - polls the server & displays the results
+ *  - repeat until heat death of the universe, reset, or power off
+ */
 void loop() {
   drd->loop(); // log for double-reset detector
 
