@@ -1,5 +1,6 @@
 # Displays Mozcast weather on a ESP32 board
 
+```
 /* 
  *  Requires:
  *    ESP32 Lilypad TTGO with T-Display (can be adapted to others easily though)
@@ -20,6 +21,7 @@
  *    4. Compile & upload
  *    
  */
- 
+```
+
 Arduino C++ code. 
 
