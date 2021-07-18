@@ -53,3 +53,6 @@ Photo of running device
 * The code is a messy mix of String() and char\[]s - it works for me.
 * If Moz changes their setup, this will stop working. I have no particular plans to keep it working, but I might. 
 * I don't have plans to implement other search-weather reports. Knock yourself out if you want to do it. The HTML parsing is messy, a JSON API would be easier. 
+* I have no affiliations with Moz. They're not paying for this [link](https://moz.com). 
+* I don't know how MozCast works, I'm guessing it's 100% accurate (works as implemented). 
+* The data source doesn't specify a temperature unit. Assuming 'F' given the location of the company. 
