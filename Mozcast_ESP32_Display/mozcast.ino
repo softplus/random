@@ -35,7 +35,7 @@
 TFT_eSPI tft = TFT_eSPI(135, 240);    // TFT display, 135x240 resolution, using User_Setup_Select.h
 
 unsigned long nextTime = 0;
-unsigned long timerDelay = 600000L;   // Refresh every 10 minutes
+unsigned long timerDelay = 3600000L;   // Refresh every 60 minutes
 
 
 #include <ESP_WiFiManager.h>          // https://github.com/khoih-prog/ESP_WiFiManager
