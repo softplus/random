@@ -19,6 +19,8 @@ Go to your WLED URL (usually something like http://wled-123ab/ ).
 Change the URL in your browser to add "/edit", for example, http://wled-123ab/edit .
 A file browser should be visible, usually with /cfg.json and /presets.json on the left.
 
+![](wled-file-editor.png)
+
 The ir.json file is the one that gives the IR controller settings for WLED. 
 Download one of the files from the appropriate remote control below. 
 Now use `Choose File` to pick the file from your computer, and `Upload` to install it. 
@@ -30,6 +32,9 @@ Click around until you find it :-).
 
 Go to Config / LED Preferences, and scroll down a bit. 
 You should find a setting with "IR pin", where you need to specify the pin number of your IR receiver. 
+
+![](ir-json-setting.png)
+
 Next to the pin number, you should have a drop-down for the type of remote.
 Select 'JSON remote' there.
 Click 'save' and be happy (or go to Config / Security & Updates / Reboot to restart).
