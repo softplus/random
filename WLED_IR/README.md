@@ -62,3 +62,7 @@ Click 'save' and be happy (or go to Config / Security & Updates / Reboot to rest
 ![](18b-1/preview.jpg)
 
 [infos](18b-1/)
+
+---
+
+This repo is under Apache License 2.0.
