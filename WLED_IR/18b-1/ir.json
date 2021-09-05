@@ -1,93 +1,94 @@
 {
   "remote": "Avmedia 18-key",
-  "0xFFA25D": {
-    "label": "Preset 1",
+
+  "0xFF48B7": {
+    "label": "Faster",
     "pos": "1x1",
-    "cmd": "PL=1"
+    "cmd": "SX=~16"
   },
-  "0xFF629D": {
-    "label": "Preset 2",
+  "0xFF40BF": {
+    "label": "Brighter",
     "pos": "1x2",
-    "cmd": "PL=2"
+    "cmd": "!incBrightness"
   },
-  "0xFFE21D": {
-    "label": "Preset 3",
-    "pos": "1x3",
-    "cmd": "PL=3"
-  },
-  "0xFF22DD": {
-    "label": "Preset 4",
-    "pos": "2x1",
-    "cmd": "PL=4"
-  },
-  "0xFF02FD": {
-    "label": "Preset 5",
-    "pos": "2x2",
-    "cmd": "PL=5"
-  },
-  "0xFFC23D": {
-    "label": "Preset 6",
-    "pos": "2x3",
-    "cmd": "PL=6"
-  },
-  "0xFFE01F": {
-    "label": "Preset 7",
-    "pos": "3x1",
-    "cmd": "PL=7"
-  },
-  "0xFFA857": {
-    "label": "Preset 8",
-    "pos": "3x2",
-    "cmd": "PL=8"
-  },
-  "0xFF906F": {
-    "label": "Preset 9",
-    "pos": "3x3",
-    "cmd": "PL=9"
-  },
-  "0xFF6897": {
+  "0xFF28D7": {
     "label": "On",
-    "pos": "4x1",
+    "pos": "1x3",
     "cmd": "T=1"
   },
-  "0xFF9867": {
-    "label": "Random",
-    "pos": "4x2",
-    "cmd": "FX=~1"
-  },
-  "0xFFB04F": {
-    "label": "Off",
-    "pos": "4x3",
-    "cmd": "T=0"
-  },
-  "0xFF18E7": {
-    "label": "Brighter",
-    "pos": "5x1",
-    "cmd": "!incBrightness"
-  },
-  "0xFF18E7": {
-    "label": "Brighter",
-    "pos": "5x2",
-    "cmd": "!incBrightness"
-  },
-  "0xFF18E7": {
-    "label": "Brighter",
-    "pos": "5x3",
-    "cmd": "!incBrightness"
-  },
-  "0xFF10EF": {
-    "label": "Speed -",
-    "pos": "6x1",
+  "0xFF58A7": {
+    "label": "Slower",
+    "pos": "2x1",
     "cmd": "SX=~-16"
   },
+  "0xFF6897": {
+    "label": "Darker",
+    "pos": "2x2",
+    "cmd": "!decBrightness"
+  },
+  "0xFFB847": {
+    "label": "Next effect",
+    "pos": "2x3",
+    "cmd": "FX=~1"
+  },
+  "0xFFA05F": {
+    "label": "Preset 1",
+    "pos": "3x1",
+    "cmd": "PL=1"
+  },
+  "0xFFF00F": {
+    "label": "Preset 2",
+    "pos": "3x2",
+    "cmd": "PL=2"
+  },
+  "0xFF9867": {
+    "label": "Preset 3",
+    "pos": "3x3",
+    "cmd": "PL=3"
+  },
   "0xFF38C7": {
-    "label": "Next",
-    "pos": "6x2",
+    "label": "Preset 4",
+    "pos": "4x1",
+    "cmd": "PL=4"
+  },
+  "0xFFB04F": {
+    "label": "Preset 5",
+    "pos": "4x2",
+    "cmd": "PL=5"
+  },
+  "0xFF18E7": {
+    "label": "Preset 6",
+    "pos": "4x3",
+    "cmd": "PL=6"
+  },
+  "0xFF7887": {
+    "label": "Preset 7",
+    "pos": "5x1",
+    "cmd": "PL=7"
+  },
+  "0xFFD827": {
+    "label": "Preset 8",
+    "pos": "5x2",
+    "cmd": "PL=8"
+  },
+  "0xFFF807": {
+    "label": "Preset 9",
+    "pos": "5x3",
+    "cmd": "PL=9"
+  },
+  "0xFF609F": {
+    "label": "Next preset",
+    "pos": "6x1",
     "cmd": "P1=1&P2=9&PL=~"
   },
-  "0xFF5AA5": {
-    "label": "Speed +",
+  "0xFF30CF": {
+    "label": "Static",
+    "pos": "6x2",
+    "cmd": "FX=1"
+  },
+  "0xFFC837": {
+    "label": "Off",
     "pos": "6x3",
-    "cmd": "SX=~16"
+    "cmd": "T=0"
   }
 }
