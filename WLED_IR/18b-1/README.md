@@ -1,6 +1,6 @@
 # 13 button remote control
 
-![](17b-1.jpg)
+![](preview.jpg)
 
 ## Layout
 
