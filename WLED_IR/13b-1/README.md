@@ -6,37 +6,34 @@
 
 Col-1 | Col-2 | Col-3
 --- | --- | ---
-1 | 2 | 3
-4 | 5 | 6
-7 | 8 | 9
-\* | 0 | #
-\--  | ^  | \-- 
-\<   | OK | \>
-\--  | v  | \-- 
+ON | Timer | OFF
+1 | \-- | 2
+3 | \-- | 4
+5 | \-- | 6
+7 | \-- | 8
+DIM | \-- | BRI
 
 ## Codes
 
 Col-1 | Col-2 | Col-3
 --- | --- | ---
-1: 0xFFA25D | 2: 0xFF629D | 3: 0xFFE21D
-4: 0xFF22DD | 5: 0xFF02FD | 6: 0xFFC23D
-7: 0xFFE01F | 8: 0xFFA857 | 9: 0xFF906F
-\*: 0xFF6897 | 0: 0xFF9867 | #: 0xFFB04F
-\--  | ^: 0xFF18E7  | \-- 
-\<: 0xFF10EF   | OK: 0xFF38C7 | \>: 0xFF5AA5
-\--  | v: 0xFF4AB5  | \-- 
+ON: 0xFF22DD | Timer: 0xFF629D | OFF: 0xFFE21D
+1: 0xFF22DD | \-- | 2: 0xFFC23D
+3: 0xFFE01F | \-- | 4: 0xFF906F
+5: 0xFF6897 | \-- | 6: 0xFFB04F
+7: 0xFF30CF | \-- | 8: 0xFF7A85
+DIM: 0xFF10EF | \-- | BRI: 0xFF5AA5
 
 ## WLED 
 
 Col-1 | Col-2 | Col-3
 --- | --- | ---
-1: Preset 1 | 2: Preset 2 | 3: Preset 3
-4: Preset 4 | 5: Preset 5 | 6: Preset 6
-7: Preset 7 | 8: Preset 8 | 9: Preset 9
-\*: ON | 0: Random | #: OFF
-\--  | ^: Brighter  | \-- 
-\<: Slower   | OK: Next Preset | \>: Faster
-\--  | v: Darker  | \-- 
+ON: on | Timer: Next effect | OFF: off
+1: Preset 1 | \-- | 2: Preset 2
+3: Preset 3 | \-- | 4: Preset 4
+5: Preset 5 | \-- | 6: Preset 6
+7: Preset 7 | \-- | 8: Preset 8
+DIM: Slower | \-- | BRI: Faster
 
 File: [ir.json](ir.json)
 
