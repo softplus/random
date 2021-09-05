@@ -26,6 +26,16 @@ Col-1 | Col-2 | Col-3
 \<: 0xFF10EF   | OK: 0xFF38C7 | \>: 0xFF5AA5
 \--  | v: 0xFF4AB5  | \-- 
 
-
 ## WLED 
 
+Col-1 | Col-2 | Col-3
+--- | --- | ---
+1: Preset 1 | 2: Preset 2 | 3: Preset 3
+4: Preset 4 | 5: Preset 5 | 6: Preset 6
+7: Preset 7 | 8: Preset 8 | 9: Preset 9
+\*: ON | 0: Random | #: OFF
+\--  | ^: Brighter  | \-- 
+\<: Slower   | OK: Next Preset | \>: Faster
+\--  | v: Darker  | \-- 
+
+Download: [ir.json](ir.json)
