@@ -33,11 +33,11 @@ Col-1 | Col-2 | Col-3
 1: Preset 1 | 2: Preset 2 | 3: Preset 3
 4: Preset 4 | 5: Preset 5 | 6: Preset 6
 7: Preset 7 | 8: Preset 8 | 9: Preset 9
-\*: ON | 0: Random | #: OFF
+\*: ON | 0: Next effect | #: OFF
 \--  | ^: Brighter  | \-- 
 \<: Slower   | OK: Next Preset | \>: Faster
 \--  | v: Darker  | \-- 
 
 File: [ir.json](ir.json)
 
-Download: [ir.json](https://raw.githubusercontent.com/softplus/random/master/WLED_IR/13b-1/ir.json)
+Download: [ir.json](https://raw.githubusercontent.com/softplus/random/master/WLED_IR/17b-1/ir.json)
