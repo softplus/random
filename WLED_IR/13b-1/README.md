@@ -18,7 +18,14 @@ Col-1 | Col-2 | Col-3
 
 Col-1 | Col-2 | Col-3
 --- | --- | ---
-1 | 2 | 3
+1: 0xFFA25D | 2: 0xFF629D | 3: 0xFFE21D
+4: 0xFF22DD | 5: 0xFF02FD | 6: 0xFFC23D
+7: 0xFFE01F | 8: 0xFFA857 | 9: 0xFF906F
+\*: 0xFF6897 | 0: 0xFF9867 | #: 0xFFB04F
+\--  | ^: 0xFF18E7  | \-- 
+\<: 0xFF10EF   | OK: 0xFF38C7 | \>: 0xFF5AA5
+\--  | v: 0xFF4AB5  | \-- 
+
 
 ## WLED 
 
