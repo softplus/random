@@ -38,4 +38,6 @@ Col-1 | Col-2 | Col-3
 \<: Slower   | OK: Next Preset | \>: Faster
 \--  | v: Darker  | \-- 
 
-Download: [ir.json](ir.json)
+File: [ir.json](ir.json)
+
+Download: [ir.json](https://raw.githubusercontent.com/softplus/random/master/WLED_IR/13b-1/ir.json)
