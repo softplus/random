@@ -17,7 +17,7 @@ DIM | \-- | BRI
 
 Col-1 | Col-2 | Col-3
 --- | --- | ---
-ON: 0xFF22DD | Timer: 0xFF629D | OFF: 0xFFE21D
+ON: 0xFFA25D | Timer: 0xFF629D | OFF: 0xFFE21D
 1: 0xFF22DD | \-- | 2: 0xFFC23D
 3: 0xFFE01F | \-- | 4: 0xFF906F
 5: 0xFF6897 | \-- | 6: 0xFFB04F

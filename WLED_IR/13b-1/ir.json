@@ -1,6 +1,6 @@
 {
   "remote": "Leds 13-key",
-  "0xFF22DD": {
+  "0xFFA25D": {
     "label": "On",
     "pos": "1x1",
     "cmd": "T=1"
